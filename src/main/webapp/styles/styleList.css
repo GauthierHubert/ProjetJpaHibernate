@@ -1,0 +1,112 @@
+.background {
+    background-image: url('../images/index/wallpaperfixe.png');
+    /* Autres propriétés pour ajuster le comportement de l'arrière-plan */
+    background-repeat: no-repeat; /* pour empêcher la répétition de l'image */
+    background-size: cover; /* pour ajuster la taille de l'image à l'arrière-plan */
+    /*background-position: center; !* pour centrer l'image dans l'arrière-plan *!*/
+    position: fixed;
+    height: 100vh; /* pour prendre toute la hauteur de la fenêtre du navigateur */
+    width: 100%;
+    z-index: -1;
+
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Centrer le tableau sur 1160px */
+.table {
+    margin: 0 auto;
+    max-width: 1000px;
+    background-color: rgba(42, 39, 39, 0.7);
+    border-radius: 10px;
+    table-layout: fixed; /* Utilisation d'une mise en page fixe */
+}
+
+th {
+    font-size: 20px;
+}
+
+/* Encadré transparent pour les cellules du tableau */
+.table th {
+    color: #f3f3f3;
+    border: goldenrod;
+    background-color: transparent;
+    text-align: center;
+}
+
+/* Centrer horizontalement et verticalement les éléments du tableau */
+.table td {
+    color: #f3f3f3;
+    text-align: center; /* Centrage horizontal */
+    vertical-align: middle; /* Centrage vertical */
+    border: goldenrod;
+    background-color: transparent;
+}
+
+/* Appliquer la couleur de fond dorée aux lignes de la table */
+.table-row {
+    background-color: goldenrod;
+}
+
+/* Personnaliser les boutons avec une couleur dorée */
+.btn-info {
+    background-color: goldenrod;
+    border-color: goldenrod;
+    color: white;
+}
+
+/* Personnaliser les barres de séparation avec une couleur dorée */
+.table thead th {
+    border-bottom: 2px solid goldenrod;
+}
+
+/* Personnaliser les boutons avec une couleur dorée */
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: rgba(176, 115, 22, 0.8); /* Couleur verte avec une opacité de 0.8 */
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(176, 115, 22, 0.8); /* Couleur verte avec une opacité de 0.8 */
+    color: #ffffff;
+}
+.test-red {
+    background-color: #8a1515 !important;
+
+}
+
+/* Ajout des styles pour le bouton */
+.button-container {
+    display: flex;
+    margin: 5vh auto;
+    width: 10vw;
+}
+
+.btntranslu {
+    background-color: rgba(199, 98, 14, 0.71) !important; /* Couleur verte avec une opacité de 0.8 */
+    border: none!important;
+    font-weight: bold!important;
+    font-size: 25px!important;
+
+}
+
+.btntranslu:hover {
+    background-color: rgba(199, 98, 14, 0.90) !important; /* Couleur verte avec une opacité de 0.8 */
+
+}
+.modal-content {
+    background-image: url('../images/index/ahri.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+}

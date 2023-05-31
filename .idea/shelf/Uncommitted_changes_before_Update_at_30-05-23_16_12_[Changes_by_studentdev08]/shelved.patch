@@ -1,0 +1,631 @@
+Index: src/main/java/com/example/labo/repositories/impl/BaseRepositoryImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.labo.repositories.impl;\r\n\r\nimport com.example.labo.repositories.BaseRepository;\r\nimport jakarta.persistence.EntityManager;\r\nimport jakarta.persistence.EntityManagerFactory;\r\nimport jakarta.persistence.Persistence;\r\n\r\nimport java.util.List;\r\nimport java.util.Optional;\r\n\r\n\r\npublic abstract class BaseRepositoryImpl<TKey, TEntity> implements BaseRepository<TKey, TEntity> {\r\n\r\n    protected EntityManagerFactory emf;\r\n    protected EntityManager em;\r\n\r\n    public BaseRepositoryImpl() {\r\n        this.emf = Persistence.createEntityManagerFactory(\"LaboJavaWeb\");\r\n        this.em = emf.createEntityManager();\r\n    }\r\n\r\n    @Override\r\n    public TEntity add(TEntity entity) {\r\n        em.getTransaction().begin();\r\n        em.persist(entity);\r\n        em.getTransaction().commit();\r\n\r\n        return entity;\r\n    }\r\n\r\n    @Override\r\n    public  Optional<TEntity> getOne(TEntity entity ,TKey id){\r\n        Optional optional = em.find(Optional.class, id);\r\n        return (Optional<TEntity>) Optional.ofNullable(optional);\r\n    }\r\n\r\n    @Override\r\n    public abstract List<TEntity> getAll();\r\n\r\n    @Override\r\n    public TEntity update(TEntity entity) {\r\n        em.getTransaction().begin();\r\n\r\n        em.merge(entity);\r\n\r\n        em.getTransaction().commit();\r\n\r\n        return entity;\r\n    }\r\n\r\n    @Override\r\n    public void delete(TKey id) {\r\n\r\n        try {\r\n            em.getTransaction().begin();\r\n\r\n            em.remove(id);\r\n\r\n            em.getTransaction().commit();\r\n        } catch (IllegalArgumentException e){\r\n            System.out.println(\"BaseRepositoryImpl.delete  -- id correspondant n'existe pas\");\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/labo/repositories/impl/BaseRepositoryImpl.java b/src/main/java/com/example/labo/repositories/impl/BaseRepositoryImpl.java
+--- a/src/main/java/com/example/labo/repositories/impl/BaseRepositoryImpl.java	(revision aecd3f318fdcb598b149e81d355dff0d246888a5)
++++ b/src/main/java/com/example/labo/repositories/impl/BaseRepositoryImpl.java	(date 1685450371731)
+@@ -8,12 +8,21 @@
+ import java.util.List;
+ import java.util.Optional;
+ 
+-
++/**
++ * Implémentation abstraite de l'interface BaseRepository.
++ *
++ * @param <TKey>    Le type de la clé primaire de l'entité.
++ * @param <TEntity> Le type de l'entité.
++ */
+ public abstract class BaseRepositoryImpl<TKey, TEntity> implements BaseRepository<TKey, TEntity> {
+ 
+     protected EntityManagerFactory emf;
+     protected EntityManager em;
+ 
++    /**
++     * Constructeur de la classe BaseRepositoryImpl.
++     * Initialise l'EntityManagerFactory et l'EntityManager.
++     */
+     public BaseRepositoryImpl() {
+         this.emf = Persistence.createEntityManagerFactory("LaboJavaWeb");
+         this.em = emf.createEntityManager();
+@@ -21,44 +30,69 @@
+ 
+     @Override
+     public TEntity add(TEntity entity) {
++        // Démarre une transaction
+         em.getTransaction().begin();
++
++        // Persiste l'entité dans la base de données
+         em.persist(entity);
++
++        // Valide la transaction
+         em.getTransaction().commit();
+ 
++        // Retourne l'entité persistée
+         return entity;
+     }
+ 
++
+     @Override
+-    public  Optional<TEntity> getOne(TEntity entity ,TKey id){
+-        Optional optional = em.find(Optional.class, id);
+-        return (Optional<TEntity>) Optional.ofNullable(optional);
++    public Optional<TEntity> getOne(TEntity entity, TKey id) {
++
++        // Obtient la classe de l'entité
++        Class<TEntity> tEntityClass = (Class<TEntity>) entity.getClass();
++
++        // Récupère l'entité à partir de son ID en utilisant EntityManager
++        TEntity tEntity = em.find(tEntityClass, id);
++
++        // Retourne l'entité trouvée, enveloppée dans un Optional
++        return Optional.ofNullable(tEntity);
+     }
++
+ 
+     @Override
+     public abstract List<TEntity> getAll();
+ 
+     @Override
+     public TEntity update(TEntity entity) {
++        // Démarre une transaction
+         em.getTransaction().begin();
+ 
++        // Met à jour l'entité dans la base de données en utilisant EntityManager
+         em.merge(entity);
+ 
++        // Valide la transaction
+         em.getTransaction().commit();
+ 
++        // Retourne l'entité mise à jour
+         return entity;
+     }
+ 
++
+     @Override
+-    public void delete(TKey id) {
++    public void delete(TEntity e, TKey id) {
++        // Récupère l'entité à supprimer en utilisant la méthode getOne
++        Optional<TEntity> entity = getOne(e, id);
+ 
+-        try {
++        // Vérifie si l'entité existe
++        if (entity.isPresent()) {
++            // Démarre une transaction
+             em.getTransaction().begin();
+ 
+-            em.remove(id);
++            // Supprime l'entité de la base de données en utilisant EntityManager
++            em.remove(entity.get());
+ 
++            // Valide la transaction
+             em.getTransaction().commit();
+-        } catch (IllegalArgumentException e){
+-            System.out.println("BaseRepositoryImpl.delete  -- id correspondant n'existe pas");
+         }
+     }
++
+ }
+Index: src/main/java/com/example/labo/models/forms/UserForm.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.labo.models.forms;\r\n\r\nimport com.example.labo.models.entities.User;\r\nimport lombok.*;\r\n\r\n@Getter @Setter @Builder @AllArgsConstructor @NoArgsConstructor @ToString\r\npublic class UserForm {\r\n\r\n    private String username;\r\n    private String password;\r\n    private String email;\r\n\r\n    public User toEntity(){\r\n        return new User(username, password, email);\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/labo/models/forms/UserForm.java b/src/main/java/com/example/labo/models/forms/UserForm.java
+--- a/src/main/java/com/example/labo/models/forms/UserForm.java	(revision aecd3f318fdcb598b149e81d355dff0d246888a5)
++++ b/src/main/java/com/example/labo/models/forms/UserForm.java	(date 1685102237084)
+@@ -1,13 +1,26 @@
+ package com.example.labo.models.forms;
+ 
+ import com.example.labo.models.entities.User;
++import jakarta.validation.constraints.Email;
++import jakarta.validation.constraints.NotBlank;
++import jakarta.validation.constraints.Size;
+ import lombok.*;
+ 
+ @Getter @Setter @Builder @AllArgsConstructor @NoArgsConstructor @ToString
+ public class UserForm {
+ 
++
++    @NotBlank(message = "Information obligatoire")
++    @Size(min = 3, max = 15, message = "La taille doit être comprise en 5 et 15")
+     private String username;
++
++    @NotBlank(message = "Information obligatoire")
++    @Size(min = 4, message = "La taille doit être comprise en 4 et 30")
+     private String password;
++
++    @Email(message = "Vous devez mettre un mail valide")
++    @NotBlank(message = "Information obligatoire")
++    @Size(min = 5, message = "La taille minimum est de 5")
+     private String email;
+ 
+     public User toEntity(){
+Index: src/main/java/com/example/labo/repositories/impl/UserRepositoryImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.labo.repositories.impl;\r\n\r\nimport com.example.labo.exceptions.EntityNotFoundException;\r\nimport com.example.labo.models.entities.User;\r\nimport com.example.labo.repositories.UserRepository;\r\nimport jakarta.enterprise.context.SessionScoped;\r\nimport jakarta.inject.Named;\r\nimport jakarta.persistence.TypedQuery;\r\n\r\nimport java.io.Serializable;\r\nimport java.util.List;\r\n\r\n@Named\r\n@SessionScoped\r\npublic class UserRepositoryImpl extends BaseRepositoryImpl<Long, User> implements UserRepository, Serializable {\r\n\r\n\r\n    public UserRepositoryImpl(){\r\n\r\n    }\r\n\r\n    @Override\r\n    public User getAllinfoById(Long id) {\r\n        TypedQuery<User> query = em.createQuery(\"select u from User u where id = :id\", User.class);\r\n        query.setParameter(\"id\", id);\r\n        User user = query.getSingleResult();\r\n        return user;\r\n    }\r\n\r\n    @Override\r\n    public User findByLogin(String login) {\r\n        TypedQuery<User> query = em.createQuery(\"select u from User u where username = :login or email = :login\", User.class);\r\n        query.setParameter(\"login\", login);\r\n        User user = query.getSingleResult();\r\n        if (user == null) {\r\n            throw new EntityNotFoundException(\"User not found with login: \" + login);\r\n        }\r\n        return user;\r\n    }\r\n\r\n\r\n    @Override\r\n    public List<User> getAll() {\r\n        TypedQuery<User> query = em.createQuery(\"select a from User a \", User.class);\r\n        List<User> users = query.getResultList();\r\n        System.out.println(\"Résultat(s) reçu : \" + users.size());\r\n        users.forEach(System.out::println);\r\n        em.clear();\r\n        return users;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/labo/repositories/impl/UserRepositoryImpl.java b/src/main/java/com/example/labo/repositories/impl/UserRepositoryImpl.java
+--- a/src/main/java/com/example/labo/repositories/impl/UserRepositoryImpl.java	(revision aecd3f318fdcb598b149e81d355dff0d246888a5)
++++ b/src/main/java/com/example/labo/repositories/impl/UserRepositoryImpl.java	(date 1685450371697)
+@@ -14,38 +14,56 @@
+ @SessionScoped
+ public class UserRepositoryImpl extends BaseRepositoryImpl<Long, User> implements UserRepository, Serializable {
+ 
++    // Implémente l'interface UserRepository et étend la classe BaseRepositoryImpl
++    // Spécifie les paramètres génériques Long (pour la clé primaire) et User (pour l'entité)
+ 
+-    public UserRepositoryImpl(){
+-
++    public UserRepositoryImpl() {
++        // Constructeur par défaut de la classe
+     }
+ 
+     @Override
+     public User getAllinfoById(Long id) {
++        // Crée une requête typée pour récupérer les informations complètes d'un utilisateur par son ID
+         TypedQuery<User> query = em.createQuery("select u from User u where id = :id", User.class);
+         query.setParameter("id", id);
++
++        // Exécute la requête et récupère l'utilisateur unique correspondant à l'ID
+         User user = query.getSingleResult();
++
++        // Retourne l'utilisateur
+         return user;
+     }
+ 
+     @Override
+     public User findByLogin(String login) {
++        // Crée une requête typée pour rechercher un utilisateur par son nom d'utilisateur ou son email
+         TypedQuery<User> query = em.createQuery("select u from User u where username = :login or email = :login", User.class);
+         query.setParameter("login", login);
++
++        // Exécute la requête et récupère l'utilisateur unique correspondant
+         User user = query.getSingleResult();
+         if (user == null) {
++
++            // Lance une exception si l'utilisateur n'est pas trouvé
+             throw new EntityNotFoundException("User not found with login: " + login);
+         }
++        // Retourne l'utilisateur
+         return user;
+     }
+ 
+-
+     @Override
+     public List<User> getAll() {
++        // Crée une requête typée pour récupérer tous les utilisateurs
+         TypedQuery<User> query = em.createQuery("select a from User a ", User.class);
++        // Récupère la liste des utilisateurs résultant de la requête
+         List<User> users = query.getResultList();
++        // Affiche le nombre de résultats reçus
+         System.out.println("Résultat(s) reçu : " + users.size());
++        // Affiche chaque utilisateur
+         users.forEach(System.out::println);
++        // Efface le contexte de l'EntityManager
+         em.clear();
++        // Retourne la liste des utilisateurs
+         return users;
+     }
+ }
+Index: src/main/java/com/example/labo/models/entities/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.labo.models.entities;\r\n\r\nimport jakarta.persistence.*;\r\nimport lombok.*;\r\n\r\nimport java.io.Serializable;\r\nimport java.lang.reflect.Field;\r\n\r\n\r\n@NoArgsConstructor @AllArgsConstructor @Getter @Setter\r\n@Table(name = \"UTILISATEUR\")\r\n@Entity\r\n@Inheritance(strategy = InheritanceType.SINGLE_TABLE)\r\n@DiscriminatorColumn(name = \"Role\")\r\n@DiscriminatorValue(\"User\")\r\npublic class User implements Serializable {\r\n\r\n    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    @Column(name = \"USER_ID\")\r\n    private Long id;\r\n\r\n    @Column(name = \"USERNAME\",length = 40)\r\n    private String username;\r\n\r\n    @Column(name = \"PASSWORD\",length = 40)\r\n    private String password;\r\n\r\n    @Column(name = \"EMAIL\",length = 60)\r\n    private String email;\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/labo/models/entities/User.java b/src/main/java/com/example/labo/models/entities/User.java
+--- a/src/main/java/com/example/labo/models/entities/User.java	(revision 0fe68f8d2d73caaca622fabed152309c89c18aea)
++++ b/src/main/java/com/example/labo/models/entities/User.java	(date 1685455494242)
+@@ -1,7 +1,10 @@
+ package com.example.labo.models.entities;
+ 
+ import jakarta.persistence.*;
+-import lombok.*;
++import lombok.AllArgsConstructor;
++import lombok.Getter;
++import lombok.NoArgsConstructor;
++import lombok.Setter;
+ 
+ import java.io.Serializable;
+ import java.lang.reflect.Field;
+@@ -19,14 +22,47 @@
+     @Column(name = "USER_ID")
+     private Long id;
+ 
++
+     @Column(name = "USERNAME",length = 40)
+     private String username;
+ 
+-    @Column(name = "PASSWORD",length = 40)
++
++    @Column(name = "PASSWORD",length = 100)
+     private String password;
+ 
++
+     @Column(name = "EMAIL",length = 60)
+     private String email;
+ 
++    public User(String username, String password, String email){
++        this.username = username;
++        this.password = password;
++        this.email = email;
++    }
++
++    public String getRole(){
++        DiscriminatorValue discriminatorValue = getClass().getAnnotation(DiscriminatorValue.class);
++        if (discriminatorValue != null) {
++            return discriminatorValue.value();
++        } else {
++            return null;
++        }
++    }
++
++    public void setRole(String role) {
++        DiscriminatorValue discriminatorValue = getClass().getAnnotation(DiscriminatorValue.class);
++        if (discriminatorValue != null) {
++            try {
++                Field roleField = this.getClass().getSuperclass().getDeclaredField("role");
++                roleField.setAccessible(true);
++                roleField.set(this, role);
++            } catch (NoSuchFieldException | IllegalAccessException e) {
++                e.printStackTrace();
++            }
++        }
++    }
++
++
++
+ 
+ }
+Index: src/main/java/com/example/labo/servlets/UserListServlet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.labo.servlets;\r\n\r\nimport com.example.labo.models.entities.User;\r\nimport com.example.labo.repositories.UserRepository;\r\nimport com.example.labo.repositories.impl.UserRepositoryImpl;\r\nimport com.example.labo.services.impl.UserServiceImpl;\r\nimport jakarta.inject.Inject;\r\nimport jakarta.servlet.ServletException;\r\nimport jakarta.servlet.annotation.WebServlet;\r\nimport jakarta.servlet.http.HttpServlet;\r\nimport jakarta.servlet.http.HttpServletRequest;\r\nimport jakarta.servlet.http.HttpServletResponse;\r\nimport jakarta.servlet.http.HttpSession;\r\n\r\nimport java.io.IOException;\r\nimport java.util.List;\r\n\r\n@WebServlet(name = \"userList\", urlPatterns = \"/userList\")\r\npublic class UserListServlet extends HttpServlet {\r\n\r\n    @Inject\r\n    UserServiceImpl userService;\r\n    HttpSession session;\r\n\r\n    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n\r\n        if(request.getParameter(\"id\")!=null){\r\n            Long id = Long.parseLong(request.getParameter(\"id\"));\r\n            userService.delete(id);\r\n        }\r\n        List<User> users = userService.getMany();\r\n\r\n        System.out.println(\"users.size() = \" + users.size());\r\n        request.setAttribute(\"user\", users);\r\n\r\n        request.getRequestDispatcher(\"WEB-INF/pages/userList.jsp\").forward(request,response);\r\n\r\n    }\r\n    @Override\r\n    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n\r\n        if(request.getParameter(\"id\")!=null){\r\n            Long id = Long.parseLong(request.getParameter(\"id\"));\r\n            User user = userService.getAllInfoById(id);\r\n            userService.delete(user, id);\r\n        }\r\n        response.sendRedirect(request.getContextPath() + \"/userList\");\r\n    }\r\n\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/labo/servlets/UserListServlet.java b/src/main/java/com/example/labo/servlets/UserListServlet.java
+--- a/src/main/java/com/example/labo/servlets/UserListServlet.java	(revision 0fe68f8d2d73caaca622fabed152309c89c18aea)
++++ b/src/main/java/com/example/labo/servlets/UserListServlet.java	(date 1685450371704)
+@@ -24,10 +24,7 @@
+ 
+     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+ 
+-        if(request.getParameter("id")!=null){
+-            Long id = Long.parseLong(request.getParameter("id"));
+-            userService.delete(id);
+-        }
++
+         List<User> users = userService.getMany();
+ 
+         System.out.println("users.size() = " + users.size());
+Index: src/main/webapp/WEB-INF/pages/userList.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page import=\"java.util.Comparator\" %>\r\n<%@ page import=\"java.util.List\" %>\r\n<%@ page import=\"com.example.labo.models.entities.User\" %><%--\r\n  Created by IntelliJ IDEA.\r\n  User: studentdev05\r\n  Date: 10-05-23\r\n  Time: 09:45\r\n  To change this template use File | Settings | File Templates.\r\n--%>\r\n<%@ page contentType=\"text/html;charset=UTF-8\" language=\"java\" %>\r\n<!DOCTYPE html>\r\n<html lang=\"fr\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n\r\n    <!--  BOOTSTRAP  -->\r\n    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ\" crossorigin=\"anonymous\">\r\n\r\n    <!--  Font Awesome  -->\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css\" integrity=\"sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />\r\n\r\n\r\n    <title>Title</title>\r\n</head>\r\n<body>\r\n\r\n<%@ include file=\"header.jsp\" %>\r\n\r\n<% List<User> users = (List<User>) request.getAttribute(\"user\");%>\r\n\r\n\r\n<section class=\"form-div\">\r\n    <table class=\"table\">\r\n        <thead class=\"thead-dark\">\r\n        <tr>\r\n            <th>ID</th>\r\n            <th>User username</th>\r\n            <th>User Email</th>\r\n            <th>Update User</th>\r\n            <th>Update Role</th>\r\n            <th>Delete User</th>\r\n\r\n        </tr>\r\n        </thead>\r\n\r\n        <tbody>\r\n        <%\r\n            users.sort(Comparator.comparing(User::getId));\r\n            for (User c : users){ %>\r\n        <tr>\r\n            <td><%= c.getId()%></td>\r\n            <td><%= c.getUsername()%></td>\r\n            <td><%= c.getEmail()%></td>\r\n\r\n\r\n\r\n            <td>\r\n                <form action=\"updateUser\" method=\"get\">\r\n                    <button type=\"submit\" class=\"btn btn-info\" name=\"upd\" id=\"button-update\">Update</button>\r\n                    <input type=\"text\" name=\"id\" value=\"<%= c.getId()%>\" hidden=\"hidden\">\r\n                </form>\r\n            </td>\r\n            <td>\r\n                <form action=\"userList\" method=\"get\">\r\n                    <button type=\"submit\" class=\"btn btn-info\" name=\"del\" id=\"button-delete\">Delete</button>\r\n                    <input type=\"text\" name=\"id\" value=\"<%= c.getId()%>\" hidden=\"hidden\">\r\n                </form>\r\n            </td>\r\n        </tr>\r\n        <% } %>\r\n        </tbody>\r\n    </table>\r\n</section>\r\n\r\n\r\n<%--  BOOTSTRAP  --%>\r\n<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe\" crossorigin=\"anonymous\"></script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/pages/userList.jsp b/src/main/webapp/WEB-INF/pages/userList.jsp
+--- a/src/main/webapp/WEB-INF/pages/userList.jsp	(revision 0fe68f8d2d73caaca622fabed152309c89c18aea)
++++ b/src/main/webapp/WEB-INF/pages/userList.jsp	(date 1685448043348)
+@@ -63,7 +63,13 @@
+                 </form>
+             </td>
+             <td>
+-                <form action="userList" method="get">
++                <form action="updateRole" method="post">
++                    <button type="submit" class="btn btn-info" name="updR" id="button-role">Update</button>
++                    <input type="text" name="id" value="<%= c.getId()%>" hidden="hidden">
++                </form>
++            </td>
++            <td>
++                <form action="userList" method="post">
+                     <button type="submit" class="btn btn-info" name="del" id="button-delete">Delete</button>
+                     <input type="text" name="id" value="<%= c.getId()%>" hidden="hidden">
+                 </form>
+Index: src/main/java/com/example/labo/servlets/UpdateUserServlet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.labo.servlets;\r\n\r\nimport com.example.labo.models.entities.User;\r\nimport com.example.labo.services.impl.UserServiceImpl;\r\nimport jakarta.inject.Inject;\r\nimport jakarta.servlet.ServletException;\r\nimport jakarta.servlet.annotation.WebServlet;\r\nimport jakarta.servlet.http.HttpServlet;\r\nimport jakarta.servlet.http.HttpServletRequest;\r\nimport jakarta.servlet.http.HttpServletResponse;\r\nimport jakarta.servlet.http.HttpSession;\r\n\r\nimport java.io.IOException;\r\n\r\n@WebServlet(name = \"updateUser\", urlPatterns = \"/updateUser\")\r\npublic class UpdateUserServlet extends HttpServlet {\r\n\r\n    @Inject\r\n    UserServiceImpl userService;\r\n    HttpSession session;\r\n\r\n\r\n\r\n    @Override\r\n    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n\r\n        // Obtention de la session\r\n        HttpSession session = request.getSession(true);\r\n\r\n        // Récupération de l'ID de l'utilisateur à partir des paramètres de la requête\r\n        Long id = Long.parseLong(request.getParameter(\"id\"));\r\n        System.out.println(\"id = \" + id);\r\n\r\n        // Obtention des informations de l'utilisateur à partir du service\r\n        User user = userService.getAllInfoById(id);\r\n        String username = user.getUsername();\r\n        String password = user.getPassword();\r\n        String email = user.getEmail();\r\n\r\n        // Stockage des informations de l'utilisateur dans la session\r\n        session.setAttribute(\"USER_ID\", user.getId());\r\n        session.setAttribute(\"role\", role);\r\n        session.setAttribute(\"firstName\", username);\r\n        session.setAttribute(\"password\", password);\r\n        session.setAttribute(\"email\", email);\r\n\r\n        // Redirection vers la page de mise à jour d'utilisateur\r\n        request.getRequestDispatcher(\"WEB-INF/pages/updateUser.jsp\").forward(request,response);\r\n    }\r\n\r\n    @Override\r\n    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n\r\n        // Récupération des paramètres de la requête\r\n        String username = request.getParameter(\"username\");\r\n        String password = request.getParameter(\"password\");\r\n        String email = request.getParameter(\"email\");\r\n\r\n        // Récupération de l'ID de l'utilisateur depuis la session\r\n        Long id = (Long) session.getAttribute(\"USER_ID\");\r\n        System.out.println(\"id DE POST = \" + id);\r\n\r\n        // Récupération du mot de passe original de l'utilisateur\r\n        String originalPassword = userService.getAllInfoById(id).getPassword();\r\n\r\n\r\n        if (password.isEmpty()) {\r\n            // Le champ du mot de passe est vide, utilisez le mot de passe d'origine\r\n            password = originalPassword;\r\n        }\r\n\r\n        // Création de l'objet User avec les valeurs des paramètres\r\n        User user = userService.getAllInfoById(id);\r\n        user.setUsername(username);\r\n        user.setPassword(password);\r\n        user.setEmail(email);\r\n        user.setRole(role);\r\n\r\n\r\n        // Appel de la méthode de service pour mettre à jour l'utilisateur\r\n        userService.update(user);\r\n\r\n        // Redirection vers la page \"userList\"\r\n        response.sendRedirect(\"userList\");\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/labo/servlets/UpdateUserServlet.java b/src/main/java/com/example/labo/servlets/UpdateUserServlet.java
+--- a/src/main/java/com/example/labo/servlets/UpdateUserServlet.java	(revision 0fe68f8d2d73caaca622fabed152309c89c18aea)
++++ b/src/main/java/com/example/labo/servlets/UpdateUserServlet.java	(date 1685455302203)
+@@ -36,6 +36,7 @@
+         String username = user.getUsername();
+         String password = user.getPassword();
+         String email = user.getEmail();
++        String role = user.getRole();
+ 
+         // Stockage des informations de l'utilisateur dans la session
+         session.setAttribute("USER_ID", user.getId());
+@@ -55,6 +56,7 @@
+         String username = request.getParameter("username");
+         String password = request.getParameter("password");
+         String email = request.getParameter("email");
++        String role = request.getParameter("role");
+ 
+         // Récupération de l'ID de l'utilisateur depuis la session
+         Long id = (Long) session.getAttribute("USER_ID");
+Index: src/main/java/com/example/labo/services/impl/UserServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.labo.services.impl;\r\n\r\nimport com.example.labo.models.entities.User;\r\nimport com.example.labo.models.forms.UserForm;\r\nimport com.example.labo.repositories.UserRepository;\r\nimport com.example.labo.repositories.impl.UserRepositoryImpl;\r\nimport jakarta.enterprise.context.SessionScoped;\r\nimport jakarta.inject.Inject;\r\nimport jakarta.inject.Named;\r\nimport jakarta.persistence.EntityNotFoundException;\r\nimport org.mindrot.jbcrypt.BCrypt;\r\n\r\nimport java.io.Serializable;\r\nimport java.util.List;\r\nimport java.util.Optional;\r\n\r\n@Named @SessionScoped\r\npublic class UserServiceImpl implements Serializable {\r\n\r\n    @Inject\r\n    private UserRepository userRepository;\r\n\r\n\r\n    public User add(UserForm user){\r\n        return userRepository.add(user.toEntity());\r\n    }\r\n\r\n\r\n    public User getOne(User user, Long id) {\r\n        // Get an Optional of the user with the given ID\r\n        Optional<User> optionalUser = userRepository.getOne(user, id);\r\n\r\n        // Check to see if the Optional is Present\r\n        // Return the user\r\n        // Return null\r\n        return optionalUser.orElse(null);\r\n    }\r\n\r\n    public List<User> getMany(){\r\n        System.out.println(\"userRepository.getAll().size() = \" + userRepository.getAll().size());\r\n        return userRepository.getAll();\r\n    }\r\n\r\n\r\n    public User update(User user){\r\n        return userRepository.update(user);\r\n    }\r\n\r\n    public void delete(Long id){\r\n\r\n        userRepository.delete(id);\r\n\r\n    }\r\n\r\n    public User getAllInfoById(Long id){\r\n        return userRepository.getAllinfoById(id);\r\n    }\r\n\r\n\r\n    public User register(User user) {\r\n\r\n        if (user.getUsername().trim().equals(\"\"))\r\n            throw new RuntimeException();\r\n        if (user.getPassword().trim().equals(\"\"))\r\n            throw new RuntimeException();\r\n\r\n        user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));\r\n\r\n        return userRepository.add(user);\r\n    }\r\n\r\n    public User login(String login, String pwd) {\r\n\r\n        User user = userRepository.findByLogin(login);\r\n\r\n        if (user == null) {\r\n            throw new EntityNotFoundException();\r\n        }\r\n\r\n        if (!BCrypt.checkpw(pwd, user.getPassword())) {\r\n            throw new RuntimeException();\r\n        }\r\n\r\n        return user;\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/labo/services/impl/UserServiceImpl.java b/src/main/java/com/example/labo/services/impl/UserServiceImpl.java
+--- a/src/main/java/com/example/labo/services/impl/UserServiceImpl.java	(revision aecd3f318fdcb598b149e81d355dff0d246888a5)
++++ b/src/main/java/com/example/labo/services/impl/UserServiceImpl.java	(date 1685432468750)
+@@ -26,14 +26,13 @@
+     }
+ 
+ 
+-    public User getOne(User user, Long id) {
+-        // Get an Optional of the user with the given ID
+-        Optional<User> optionalUser = userRepository.getOne(user, id);
++    public User getOne(User tUser, Long id) {
+ 
+-        // Check to see if the Optional is Present
+-        // Return the user
+-        // Return null
+-        return optionalUser.orElse(null);
++        Optional<User> user = userRepository.getOne(tUser, id);
++        if (user.isEmpty()) {
++            throw new EntityNotFoundException();
++        }
++        return user.get();
+     }
+ 
+     public List<User> getMany(){
+@@ -46,9 +45,9 @@
+         return userRepository.update(user);
+     }
+ 
+-    public void delete(Long id){
++    public void delete(User user, Long id){
+ 
+-        userRepository.delete(id);
++        userRepository.delete(user, id);
+ 
+     }
+ 
+@@ -63,7 +62,6 @@
+             throw new RuntimeException();
+         if (user.getPassword().trim().equals(""))
+             throw new RuntimeException();
+-
+         user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
+ 
+         return userRepository.add(user);
+Index: src/main/java/com/example/labo/repositories/BaseRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.labo.repositories;\r\n\r\nimport java.util.List;\r\nimport java.util.Optional;\r\n\r\npublic interface BaseRepository<TKey, TEntity> {\r\n\r\n    TEntity add(TEntity entity);\r\n\r\n    Optional<TEntity> getOne(TEntity entity ,TKey id);\r\n\r\n    List<TEntity> getAll();\r\n\r\n    TEntity update(TEntity entity);\r\n\r\n    void delete(TKey id);\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/labo/repositories/BaseRepository.java b/src/main/java/com/example/labo/repositories/BaseRepository.java
+--- a/src/main/java/com/example/labo/repositories/BaseRepository.java	(revision aecd3f318fdcb598b149e81d355dff0d246888a5)
++++ b/src/main/java/com/example/labo/repositories/BaseRepository.java	(date 1685429566831)
+@@ -7,12 +7,12 @@
+ 
+     TEntity add(TEntity entity);
+ 
+-    Optional<TEntity> getOne(TEntity entity ,TKey id);
++    Optional<TEntity> getOne(TEntity entity, TKey id);
+ 
+     List<TEntity> getAll();
+ 
+     TEntity update(TEntity entity);
+ 
+-    void delete(TKey id);
++    void delete(TEntity entity, TKey id);
+ 
+ }
+Index: src/main/java/com/example/labo/models/forms/ChampionForm.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.labo.models.forms;\r\n\r\n\r\nimport com.example.labo.models.entities.Champion;\r\nimport com.example.labo.models.entities.enumerations.ClassType;\r\nimport com.example.labo.models.entities.enumerations.Region;\r\nimport lombok.*;\r\n\r\nimport java.time.LocalDate;\r\n\r\n@Getter\r\n@Setter\r\n@Builder\r\n@AllArgsConstructor\r\n@NoArgsConstructor\r\n@ToString\r\npublic class ChampionForm {\r\n\r\n    private String name;\r\n    private byte[] icon;\r\n    private ClassType aClassType;\r\n    private Region region;\r\n    private LocalDate creationDate;\r\n\r\n\r\n   /* public Character toEntity() {\r\n        return new Character(name, aClass, region, creationDate);\r\n    }*/\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/labo/models/forms/ChampionForm.java b/src/main/java/com/example/labo/models/forms/ChampionForm.java
+--- a/src/main/java/com/example/labo/models/forms/ChampionForm.java	(revision 0fe68f8d2d73caaca622fabed152309c89c18aea)
++++ b/src/main/java/com/example/labo/models/forms/ChampionForm.java	(date 1685455685503)
+@@ -23,7 +23,7 @@
+     private LocalDate creationDate;
+ 
+ 
+-   /* public Character toEntity() {
+-        return new Character(name, aClass, region, creationDate);
+-    }*/
++   public Champion toEntity() {
++       return new Champion(name, icon, aClassType, region, creationDate);
++   }
+ }
+Index: src/main/java/com/example/labo/repositories/impl/ChampionRepositoryImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.labo.repositories.impl;\r\n\r\n\r\nimport com.example.labo.models.entities.Champion;\r\nimport com.example.labo.repositories.ChampionRepository;\r\nimport jakarta.enterprise.context.SessionScoped;\r\nimport jakarta.inject.Named;\r\nimport jakarta.persistence.TypedQuery;\r\n\r\nimport java.io.Serializable;\r\nimport java.util.List;\r\n\r\n@Named\r\n@SessionScoped\r\npublic class ChampionRepositoryImpl extends BaseRepositoryImpl<Long, Champion> implements ChampionRepository, Serializable {\r\n    @Override\r\n    public Champion getAllinfoById(Long id) {\r\n        TypedQuery<Champion> query = em.createQuery(\"select c from Champion c where id = :id\", Champion.class);\r\n        query.setParameter(\"id\", id);\r\n        Champion champion = query.getSingleResult();\r\n        return champion;\r\n    }\r\n\r\n\r\n    @Override\r\n    public List<Champion> getAll() {\r\n        TypedQuery<Champion> query = em.createQuery(\"select a from Champion a \", Champion.class);\r\n        List<Champion> champions = query.getResultList();\r\n        System.out.println(\"Résultat(s) reçu : \");\r\n        champions.forEach(System.out::println);\r\n        em.clear();\r\n        return champions;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/labo/repositories/impl/ChampionRepositoryImpl.java b/src/main/java/com/example/labo/repositories/impl/ChampionRepositoryImpl.java
+--- a/src/main/java/com/example/labo/repositories/impl/ChampionRepositoryImpl.java	(revision aecd3f318fdcb598b149e81d355dff0d246888a5)
++++ b/src/main/java/com/example/labo/repositories/impl/ChampionRepositoryImpl.java	(date 1685433419711)
+@@ -1,6 +1,5 @@
+ package com.example.labo.repositories.impl;
+ 
+-
+ import com.example.labo.models.entities.Champion;
+ import com.example.labo.repositories.ChampionRepository;
+ import jakarta.enterprise.context.SessionScoped;
+@@ -13,22 +12,33 @@
+ @Named
+ @SessionScoped
+ public class ChampionRepositoryImpl extends BaseRepositoryImpl<Long, Champion> implements ChampionRepository, Serializable {
++
++    // Implémente l'interface ChampionRepository et étend la classe BaseRepositoryImpl
++    // Spécifie les paramètres génériques Long (pour la clé primaire) et Champion (pour l'entité)
++
+     @Override
+     public Champion getAllinfoById(Long id) {
++        // Crée une requête typée pour récupérer les informations complètes d'un champion par son ID
+         TypedQuery<Champion> query = em.createQuery("select c from Champion c where id = :id", Champion.class);
+         query.setParameter("id", id);
++        // Exécute la requête et récupère le champion unique correspondant à l'ID
+         Champion champion = query.getSingleResult();
++        // Retourne le champion
+         return champion;
+     }
+ 
+-
+     @Override
+     public List<Champion> getAll() {
++        // Crée une requête typée pour récupérer tous les champions
+         TypedQuery<Champion> query = em.createQuery("select a from Champion a ", Champion.class);
++        // Récupère la liste des champions résultant de la requête
+         List<Champion> champions = query.getResultList();
++        // Affiche les résultats reçus
+         System.out.println("Résultat(s) reçu : ");
+         champions.forEach(System.out::println);
++        // Efface le contexte de l'EntityManager
+         em.clear();
++        // Retourne la liste des champions
+         return champions;
+     }
+-}
+\ No newline at end of file
++}
+Index: src/main/java/com/example/labo/models/entities/Champion.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.labo.models.entities;\r\n\r\nimport com.example.labo.models.entities.enumerations.ClassType;\r\nimport com.example.labo.models.entities.enumerations.Region;\r\nimport jakarta.persistence.*;\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Builder;\r\nimport lombok.NoArgsConstructor;\r\n\r\nimport java.io.Serializable;\r\nimport java.time.LocalDate;\r\n\r\n@Entity @Builder @AllArgsConstructor @NoArgsConstructor\r\npublic class Champion implements Serializable {\r\n\r\n    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    private Long id;\r\n\r\n    @Column(name = \"NAME\")\r\n    private String name;\r\n\r\n    @Column(name = \"CLASS\")\r\n    @Enumerated(EnumType.STRING)\r\n    private ClassType aClassType;\r\n\r\n    @Column(name = \"REGION\")\r\n    @Enumerated(EnumType.STRING)\r\n    private Region region;\r\n\r\n    @Column(name = \"CREATION_DATE\")\r\n    @Temporal(TemporalType.DATE)\r\n    private LocalDate creationDate;\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/labo/models/entities/Champion.java b/src/main/java/com/example/labo/models/entities/Champion.java
+--- a/src/main/java/com/example/labo/models/entities/Champion.java	(revision 0fe68f8d2d73caaca622fabed152309c89c18aea)
++++ b/src/main/java/com/example/labo/models/entities/Champion.java	(date 1685455685450)
+@@ -9,6 +9,7 @@
+ 
+ import java.io.Serializable;
+ import java.time.LocalDate;
++import java.util.Base64;
+ 
+ @Entity @Builder @AllArgsConstructor @NoArgsConstructor
+ public class Champion implements Serializable {
+@@ -19,6 +20,10 @@
+     @Column(name = "NAME")
+     private String name;
+ 
++    @Lob
++    @Column(name = "ICON_STRING")
++    private String stringIcon;
++
+     @Column(name = "CLASS")
+     @Enumerated(EnumType.STRING)
+     private ClassType aClassType;
+@@ -31,4 +36,11 @@
+     @Temporal(TemporalType.DATE)
+     private LocalDate creationDate;
+ 
++    public Champion(String name,byte[] icon, ClassType aClassType, Region region, LocalDate creationDate) {
++        this.name = name;
++        this.stringIcon = Base64.getEncoder().encodeToString(icon);
++        this.aClassType = aClassType;
++        this.region = region;
++        this.creationDate = creationDate;
++    }
+ }
+Index: src/main/java/com/example/labo/servlets/AddUserServlet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.labo.servlets;\r\n\r\n\r\nimport com.example.labo.models.entities.User;\r\nimport com.example.labo.models.forms.UserForm;\r\nimport com.example.labo.services.impl.UserServiceImpl;\r\nimport jakarta.inject.Inject;\r\nimport jakarta.servlet.ServletException;\r\nimport jakarta.servlet.annotation.WebServlet;\r\nimport jakarta.servlet.http.HttpServlet;\r\nimport jakarta.servlet.http.HttpServletRequest;\r\nimport jakarta.servlet.http.HttpServletResponse;\r\nimport jakarta.validation.ConstraintViolation;\r\nimport jakarta.validation.Validation;\r\nimport jakarta.validation.Validator;\r\n\r\nimport java.io.IOException;\r\nimport java.util.Set;\r\n@WebServlet(name = \"addUser\", urlPatterns = \"/user/add\")\r\npublic class AddUserServlet extends HttpServlet {\r\n\r\n    @Inject\r\n    private UserServiceImpl userService;\r\n\r\n\r\n    @Override\r\n    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n\r\n        request.getRequestDispatcher(\"/WEB-INF/pages/userForm.jsp\").forward(request,response);\r\n    }\r\n\r\n    @Override\r\n    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n\r\n        String username = request.getParameter(\"username\");\r\n        String password = request.getParameter(\"password\");\r\n        String email = request.getParameter(\"email\");\r\n\r\n        UserForm userForm = new UserForm(username, password, email);\r\n\r\n        Validator validator = Validation.buildDefaultValidatorFactory().getValidator();\r\n        Set<ConstraintViolation<UserForm>> constraints = validator.validate(userForm);\r\n\r\n        if (!constraints.isEmpty()) {\r\n            for (ConstraintViolation<UserForm> constraint : constraints) {\r\n                String propertyPath = constraint.getPropertyPath().toString();\r\n                String errorMessage = constraint.getMessage();\r\n\r\n                if (propertyPath.equals(\"username\")) {\r\n                    request.setAttribute(\"usernameError\", errorMessage);\r\n                } else if (propertyPath.equals(\"password\")) {\r\n                    request.setAttribute(\"passwordError\", errorMessage);\r\n                } else if (propertyPath.equals(\"email\")) {\r\n                    request.setAttribute(\"emailError\", errorMessage);\r\n                }\r\n            }\r\n\r\n            request.setAttribute(\"username\", username);\r\n            request.setAttribute(\"password\", password);\r\n            request.setAttribute(\"email\", email);\r\n            request.getRequestDispatcher(\"/WEB-INF/pages/animalForm.jsp\").forward(request, response);\r\n        } else {\r\n            User user = userService.add(userForm);\r\n            response.sendRedirect(request.getContextPath() + \"/index.jsp\");\r\n        }\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/labo/servlets/AddUserServlet.java b/src/main/java/com/example/labo/servlets/AddUserServlet.java
+--- a/src/main/java/com/example/labo/servlets/AddUserServlet.java	(revision 0fe68f8d2d73caaca622fabed152309c89c18aea)
++++ b/src/main/java/com/example/labo/servlets/AddUserServlet.java	(date 1685450371746)
+@@ -16,7 +16,7 @@
+ 
+ import java.io.IOException;
+ import java.util.Set;
+-@WebServlet(name = "addUser", urlPatterns = "/user/add")
++@WebServlet(name = "addUser", urlPatterns = "/addUser")
+ public class AddUserServlet extends HttpServlet {
+ 
+     @Inject
+@@ -26,7 +26,7 @@
+     @Override
+     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+ 
+-        request.getRequestDispatcher("/WEB-INF/pages/userForm.jsp").forward(request,response);
++        request.getRequestDispatcher("/WEB-INF/pages/addUser.jsp").forward(request,response);
+     }
+ 
+     @Override
+@@ -58,7 +58,7 @@
+             request.setAttribute("username", username);
+             request.setAttribute("password", password);
+             request.setAttribute("email", email);
+-            request.getRequestDispatcher("/WEB-INF/pages/animalForm.jsp").forward(request, response);
++            request.getRequestDispatcher("/WEB-INF/pages/addUser.jsp").forward(request, response);
+         } else {
+             User user = userService.add(userForm);
+             response.sendRedirect(request.getContextPath() + "/index.jsp");
+Index: src/main/java/com/example/labo/services/impl/ChampionServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.labo.services.impl;\r\n\r\nimport com.example.labo.models.entities.Champion;\r\nimport com.example.labo.models.forms.ChampionForm;\r\nimport com.example.labo.repositories.ChampionRepository;\r\nimport com.example.labo.repositories.impl.ChampionRepositoryImpl;\r\n\r\nimport java.util.List;\r\nimport java.util.Optional;\r\n\r\npublic class ChampionServiceImpl {\r\n\r\n    private final ChampionRepository championRepository;\r\n\r\n    public ChampionServiceImpl(){\r\n        this.championRepository = new ChampionRepositoryImpl();\r\n    }\r\n\r\n    public Champion add(ChampionForm champion){\r\n        return championRepository.add(champion.toEntity());\r\n    }\r\n\r\n    public Champion getOne(Champion champion ,Long id){\r\n        // Get an Optional of the user with the given ID\r\n        Optional<Champion> optionalChampion = championRepository.getOne(champion, id);\r\n\r\n        // Check to see if the Optional is Present\r\n        // Return the user\r\n        // Return null\r\n        return optionalChampion.orElse(null);\r\n    }\r\n\r\n    public List<Champion> getMany(){\r\n        return championRepository.getAll();\r\n    }\r\n\r\n    public Champion update(Champion champion){\r\n        return championRepository.update(champion);\r\n    }\r\n\r\n    public void delete(Long id){\r\n        championRepository.delete(id);\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/labo/services/impl/ChampionServiceImpl.java b/src/main/java/com/example/labo/services/impl/ChampionServiceImpl.java
+--- a/src/main/java/com/example/labo/services/impl/ChampionServiceImpl.java	(revision aecd3f318fdcb598b149e81d355dff0d246888a5)
++++ b/src/main/java/com/example/labo/services/impl/ChampionServiceImpl.java	(date 1685429621273)
+@@ -38,8 +38,8 @@
+         return championRepository.update(champion);
+     }
+ 
+-    public void delete(Long id){
+-        championRepository.delete(id);
++    public void delete(Champion champion, Long id){
++        championRepository.delete(champion, id);
+     }
+ 
+ }
+Index: src/main/webapp/WEB-INF/pages/addUser.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page contentType=\"text/html;charset=UTF-8\" language=\"java\" %>\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <%--  BOOTSTRAP  --%>\r\n  <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\r\n        integrity=\"sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ\" crossorigin=\"anonymous\">\r\n\r\n\r\n  <%--    Font Awesome    --%>\r\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css\"\r\n        integrity=\"sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==\"\r\n        crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"/>\r\n  <title>JSP</title>\r\n</head>\r\n<body>\r\n\r\n<!-- Navigation -->\r\n<%@ include file=\"header.jsp\" %>\r\n\r\n<div class=\"container\">\r\n  <div class=\"text-center mb-4\">\r\n    <h3>Add New User</h3>\r\n    <p class=\"text-muted\">Complete the form below to add a new user</p>\r\n  </div>\r\n\r\n\r\n  <div class=\"container d-flex justify-content-center\">\r\n    <form action=\"addUser\" method=\"post\" style=\"width:50vw; min-width: 300px;\">\r\n      <div class=\"row mb-3\">\r\n        <div class=\"col\">\r\n          <label class=\"form-label\">Username :</label>\r\n          <input type=\"text\" class=\"form-control\" name=\"username\" placeholder=\"Pseudo\" value=\"${username}\"\r\n                 id=\"username\">\r\n        </div>\r\n\r\n        <div class=\"col\">\r\n          <label class=\"form-label\">Password :</label>\r\n          <input type=\"text\" class=\"form-control\" name=\"password\" placeholder=\"Password\" id=\"password\">\r\n        </div>\r\n\r\n        <div class=\"mb-3\">\r\n          <label class=\"form-label\">Email :</label>\r\n          <input type=\"email\" class=\"form-control\" name=\"email\" placeholder=\"Votre adresse email\" id=\"email\">\r\n        </div>\r\n\r\n\r\n        <div>\r\n          <button type=\"submit\" class=\"btn btn-success\" name=\"submit\">Save</button>\r\n          <a href=\"index.jsp\" class=\"btn btn-danger\">Cancel</a>\r\n        </div>\r\n\r\n      </div>\r\n    </form>\r\n  </div>\r\n</div>\r\n\r\n\r\n<%--  BOOTSTRAP  --%>\r\n<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js\"\r\n        integrity=\"sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe\"\r\n        crossorigin=\"anonymous\"></script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/pages/addUser.jsp b/src/main/webapp/WEB-INF/pages/addUser.jsp
+--- a/src/main/webapp/WEB-INF/pages/addUser.jsp	(revision 0fe68f8d2d73caaca622fabed152309c89c18aea)
++++ b/src/main/webapp/WEB-INF/pages/addUser.jsp	(date 1685449085414)
+@@ -36,7 +36,7 @@
+ 
+         <div class="col">
+           <label class="form-label">Password :</label>
+-          <input type="text" class="form-control" name="password" placeholder="Password" id="password">
++          <input type="password" class="form-control" name="password" placeholder="Password" id="password">
+         </div>
+ 
+         <div class="mb-3">
