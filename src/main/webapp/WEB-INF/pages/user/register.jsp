@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: studentdev06
-  Date: 08-05-23
-  Time: 16:18
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -41,16 +36,17 @@
     <div class="login-container">
         <h1>Register</h1>
         <form class="login-form" method="post" action="register">
+            <c:if test="${registerError != null}"> <span style="color : red">${registerError}</span> </c:if>
             <div class="form-group">
-
+                <c:if test="${usernameError != null}"> <span style="color: red"> Invalid username </span>  </c:if>
                 <input type="text" id="username" name="username" placeholder="Username" value="${username}">
             </div>
             <div class="form-group">
-
+                <c:if test="${emailError != null}"> Invalid email </c:if>
                 <input type="email" id="email" name="email" placeholder="Email" value="${email}">
             </div>
             <div class="form-group">
-
+                <c:if test="${passwordError != null}"> Invalid password </c:if>
                 <input type="password" id="password" name="password" placeholder="Password">
             </div>
             <button type="submit">Register</button>

@@ -1,6 +1,6 @@
 package com.example.labo.servlets;
 
-import com.example.labo.exceptions.InvalidPasswordUserException;
+import com.example.labo.exceptions.LoginException;
 import com.example.labo.models.dtos.ConnectedUserDto;
 import com.example.labo.models.entities.User;
 import com.example.labo.repositories.UserRepository;
@@ -12,12 +12,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.Validation;
-import jakarta.validation.Validator;
 
 import java.io.IOException;
-import java.util.Set;
 
 
 @WebServlet(name = "login", urlPatterns = "/login", loadOnStartup = 1)
@@ -48,35 +44,16 @@ public class LoginServlet extends HttpServlet {
 
         try{
             User user = userService.login(login, password);
-
-            Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
-            Set<ConstraintViolation<User>> constraints = validator.validate(user);
-
-            if (!constraints.isEmpty()){
-                for (ConstraintViolation<User> constraint : constraints){
-                    String propertyPath = constraint.getPropertyPath().toString();
-                    String errorMessage = constraint.getMessage();
-
-                    if (propertyPath.equals("login")){
-                        request.setAttribute("loginError", errorMessage);
-                    }else if (propertyPath.equals("password")){
-                        request.setAttribute("passwordError", errorMessage);
-                    }
-                }
-                request.setAttribute("login", login);
-                request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
-                return;
-            }
-
             HttpSession session = request.getSession(true);
             session.setAttribute("user", ConnectedUserDto.fromEntity(user));
-            response.sendRedirect(request.getContextPath() + "/");
 
-        }catch (InvalidPasswordUserException e){
-            request.setAttribute("errorMessage", "Mot de passe ou login invalid");
+
+        } catch (RuntimeException e) {
+            request.setAttribute("loginError", "Invalid login or password");
+            request.getRequestDispatcher("WEB-INF/pages/user/login.jsp").forward(request, response);
         }
 
-
+        response.sendRedirect(request.getContextPath() + "/");
     }
 
 }

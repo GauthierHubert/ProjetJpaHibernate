@@ -41,15 +41,10 @@ public class UserRepositoryImpl extends BaseRepositoryImpl<Long, User> implement
         query.setParameter("login", login);
 
         // Exécute la requête et récupère la liste des résultats correspondants
-        List<User> users = query.getResultList();
-
-        if (users.isEmpty()) {
-            // Aucun utilisateur trouvé, lance une exception
-            throw new EntityNotFoundException("User not found with login: " + login);
-        }
+        User user = query.getSingleResult();
 
         // Un seul utilisateur trouvé, retourne le premier élément de la liste
-        return users.get(0);
+        return user;
     }
 
     @Override

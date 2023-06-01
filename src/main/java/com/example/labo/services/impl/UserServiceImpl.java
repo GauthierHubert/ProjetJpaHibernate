@@ -1,13 +1,14 @@
 package com.example.labo.services.impl;
 
+import com.example.labo.exceptions.LoginException;
 import com.example.labo.models.entities.User;
 import com.example.labo.models.forms.UserForm;
 import com.example.labo.repositories.UserRepository;
-import com.example.labo.repositories.impl.UserRepositoryImpl;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.persistence.NoResultException;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.Serializable;
@@ -69,14 +70,20 @@ public class UserServiceImpl implements Serializable {
 
     public User login(String login, String pwd) {
 
-        User user = userRepository.findByLogin(login);
+        User user = null;
 
-        if (user == null) {
-            throw new EntityNotFoundException();
-        }
+        try{
+            user = userRepository.findByLogin(login);
 
-        if (!BCrypt.checkpw(pwd, user.getPassword())) {
-            throw new RuntimeException();
+            if (user == null) {
+                throw new EntityNotFoundException();
+            }
+
+            if (!BCrypt.checkpw(pwd, user.getPassword())) {
+                throw new RuntimeException();
+            }
+        } catch (NoResultException e) {
+            throw new LoginException();
         }
 
         return user;

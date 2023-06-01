@@ -1,6 +1,7 @@
 package com.example.labo.models.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,7 +28,7 @@ public class User implements Serializable {
     @Column(name = "PASSWORD",length = 100)
     private String password;
 
-
+    @Email(message = "Email invalide")
     @Column(name = "EMAIL",length = 60)
     private String email;
 

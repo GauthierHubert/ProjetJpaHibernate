@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: studentdev05
-  Date: 08-05-23
-  Time: 13:56
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -43,6 +38,8 @@
   <div class="login-container">
     <h1>Se connecter</h1>
     <form class="login-form" method="post" action="login">
+
+      <c:if test="${loginError != null}"> <span style="color : red">${loginError}</span> </c:if>
       <div class="form-group">
 
         <input type="text" id="login" name="login" placeholder="Login" value="${login}">
