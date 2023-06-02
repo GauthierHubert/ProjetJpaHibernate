@@ -17,13 +17,12 @@ import java.time.LocalDate;
 public class ChampionForm {
 
     private String name;
-    private byte[] icon;
-    private ClassType aClassType;
+/*  private ClassType aClassType;
     private Region region;
-    private LocalDate creationDate;
+    private LocalDate creationDate;  */
 
 
    public Champion toEntity() {
-       return new Champion(name, icon, aClassType, region, creationDate);
+       return new Champion(name/*, aClassType, region, creationDate*/);
    }
 }

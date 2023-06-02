@@ -42,7 +42,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="addUser" method="post">
                             <div class="form-group">
                                 <label class="form-label" for="username">Username :</label>
                                 <input type="text" class="form-control" id="username" name="username"
@@ -62,8 +62,8 @@
                             <div class="form-group">
                                 <label class="form-label" for="email">Select Role</label>
                                 <select class="form-select" name="role" id="selectRole">
-                                    <option value="ADMIN">ADMIN</option>
                                     <option value="PLAYER">PLAYER</option>
+                                    <option value="ADMIN">ADMIN</option>
                                 </select>
                             </div>
 

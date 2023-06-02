@@ -9,42 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3026ca49-6c27-4ae9-87a7-d16d187a7b40" name="Changes" comment="1ere version inchallah">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddListChampionServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/ChoGath.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/DrMundo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/FiddleSticks.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/Ivern.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/MonkeyKing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/RekSai.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/Taliyah.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/Velkoz.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/ChampionListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/ChampionListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/RegisterUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/RegisterUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/styleList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/styleList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/styleLogin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/styleLogin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/styleRegister.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/styleRegister.css" afterDir="false" />
-    </list>
-    <list id="564cb333-20b3-43d1-aa7e-83aba660426d" name="Changes by studentdev08" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Loading.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Splash.java" afterDir="false" />
+    <list default="true" id="3026ca49-6c27-4ae9-87a7-d16d187a7b40" name="Changes" comment="Base de donné champion okok" />
+    <list id="564cb333-20b3-43d1-aa7e-83aba660426d" name="Changes by studentdev08" comment="Changes by studentdev08">
       <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/addListChampion.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/models/forms/ChampionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/forms/ChampionForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddChampionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddChampionServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp" afterDir="false" />
     </list>
@@ -72,42 +43,6 @@
   </component>
   <component name="JspContextManager">
     <jsp-to-context jsp-file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/header.jsp" context-file="file://$PROJECT_DIR$/src/main/webapp/index.jsp" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp">
-      <ranges>
-        <range start1="0" end1="0" start2="0" end2="1" changelist="3026ca49-6c27-4ae9-87a7-d16d187a7b40" />
-        <range start1="3" end1="4" start2="4" end2="5" changelist="3026ca49-6c27-4ae9-87a7-d16d187a7b40" />
-        <range start1="15" end1="16" start2="16" end2="18" changelist="3026ca49-6c27-4ae9-87a7-d16d187a7b40" />
-        <range start1="18" end1="20" start2="20" end2="24" changelist="3026ca49-6c27-4ae9-87a7-d16d187a7b40" />
-        <range start1="25" end1="26" start2="29" end2="88" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-        <range start1="36" end1="36" start2="98" end2="102" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-        <range start1="58" end1="59" start2="124" end2="126" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-        <range start1="60" end1="60" start2="127" end2="128" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-        <range start1="61" end1="61" start2="129" end2="130" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-        <range start1="81" end1="81" start2="150" end2="154" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-        <range start1="83" end1="84" start2="156" end2="162" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp">
-      <ranges>
-        <range start1="38" end1="39" start2="38" end2="39" changelist="3026ca49-6c27-4ae9-87a7-d16d187a7b40" />
-        <range start1="44" end1="45" start2="44" end2="45" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-        <range start1="64" end1="64" start2="64" end2="65" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-        <range start1="65" end1="66" start2="66" end2="66" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java">
-      <ranges>
-        <range start1="7" end1="7" start2="7" end2="8" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-        <range start1="9" end1="10" start2="10" end2="14" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-        <range start1="11" end1="12" start2="15" end2="16" changelist="3026ca49-6c27-4ae9-87a7-d16d187a7b40" />
-        <range start1="22" end1="25" start2="26" end2="28" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-        <range start1="28" end1="29" start2="31" end2="32" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-        <range start1="38" end1="39" start2="41" end2="57" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-        <range start1="40" end1="44" start2="58" end2="79" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
-      </ranges>
-    </file>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -394,7 +329,7 @@
       <workItem from="1685428310618" duration="24017000" />
       <workItem from="1685084078319" duration="17799000" />
       <workItem from="1685515493668" duration="24324000" />
-      <workItem from="1685690098315" duration="17532000" />
+      <workItem from="1685690098315" duration="18088000" />
     </task>
     <task id="LOCAL-00001" summary="1st version">
       <created>1684936254006</created>
@@ -410,14 +345,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685024920796</updated>
     </task>
-    <task id="LOCAL-00003" summary="2st version">
-      <created>1685111137046</created>
+    <task id="LOCAL-00003" summary="Base de donné champion ok">
+      <created>1685715609625</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1685111137046</updated>
+      <updated>1685715609625</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00004" summary="Changes by studentdev08">
+      <created>1685715876435</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685715876435</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +392,9 @@
     <MESSAGE value="1st version" />
     <MESSAGE value="2st version" />
     <MESSAGE value="1ere version inchallah" />
-    <option name="LAST_COMMIT_MESSAGE" value="1ere version inchallah" />
+    <MESSAGE value="Base de donné champion ok" />
+    <MESSAGE value="Changes by studentdev08" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by studentdev08" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

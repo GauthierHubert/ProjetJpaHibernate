@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -31,14 +32,12 @@ public class AddChampionServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String name = request.getParameter("name");
-        byte[] icon = request.getPart("icon").getInputStream().readAllBytes();
         ClassType aClassType = ClassType.valueOf(request.getParameter("classType").toUpperCase());
         Region region = Region.valueOf(request.getParameter("region").toUpperCase());
         LocalDate creationDate = LocalDate.parse(request.getParameter("creationDate"), DateTimeFormatter.ISO_LOCAL_DATE);
 
-        ChampionForm championForm = new ChampionForm(name, icon, aClassType, region, creationDate );
+        ChampionForm championForm = new ChampionForm(name/*, aClassType, region, creationDate */);
 
      /*   Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
         Set<ConstraintViolation<ChampionForm>> constraints = validator.validate(championForm)*/
@@ -55,7 +54,4 @@ public class AddChampionServlet extends HttpServlet {
         Champion champion = championService.add(championForm);
         response.sendRedirect(request.getContextPath() + "/index.jsp");
     }
-
-
-
 }

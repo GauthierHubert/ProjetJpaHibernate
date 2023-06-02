@@ -59,10 +59,10 @@ public class AddUserServlet extends HttpServlet {
             request.setAttribute("username", username);
             request.setAttribute("password", password);
             request.setAttribute("email", email);
-            request.getRequestDispatcher("/WEB-INF/pages/user/addUser.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/pages/user/userList.jsp").forward(request, response);
         } else {
             User user = userService.add(userForm);
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+            response.sendRedirect(request.getContextPath() + "/userList");
         }
     }
 
