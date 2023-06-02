@@ -12,7 +12,7 @@
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 
             <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- Crée de nouvelles table à chaque utilisation, utilise en période de dév -->
+            <property name="hibernate.hbm2ddl.auto" value="create"/> <!-- Crée de nouvelles table à chaque utilisation, utilise en période de dév -->
         </properties>
     </persistence-unit>
 </persistence>
