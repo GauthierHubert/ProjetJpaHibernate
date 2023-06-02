@@ -10,20 +10,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3026ca49-6c27-4ae9-87a7-d16d187a7b40" name="Changes" comment="1ere version inchallah">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddListChampionServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/ChoGath.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/DrMundo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/FiddleSticks.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/Ivern.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/MonkeyKing.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/RekSai.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/Taliyah.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/Velkoz.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-05-23_16_12__Changes_by_studentdev08_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-05-23_16_12__Changes_by_studentdev08_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/exceptions/InvalidPasswordUserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/exceptions/LoginException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/repositories/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/repositories/impl/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/services/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/ChampionListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/ChampionListServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/RegisterUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/RegisterUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/styleList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/styleList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/styleLogin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/styleLogin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/styleRegister.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/styleRegister.css" afterDir="false" />
     </list>
-    <list id="564cb333-20b3-43d1-aa7e-83aba660426d" name="Changes by studentdev08" comment="" />
+    <list id="564cb333-20b3-43d1-aa7e-83aba660426d" name="Changes by studentdev08" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Loading.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Splash.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/addListChampion.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/models/forms/ChampionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/forms/ChampionForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddChampionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddChampionServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +73,42 @@
   <component name="JspContextManager">
     <jsp-to-context jsp-file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/header.jsp" context-file="file://$PROJECT_DIR$/src/main/webapp/index.jsp" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp">
+      <ranges>
+        <range start1="0" end1="0" start2="0" end2="1" changelist="3026ca49-6c27-4ae9-87a7-d16d187a7b40" />
+        <range start1="3" end1="4" start2="4" end2="5" changelist="3026ca49-6c27-4ae9-87a7-d16d187a7b40" />
+        <range start1="15" end1="16" start2="16" end2="18" changelist="3026ca49-6c27-4ae9-87a7-d16d187a7b40" />
+        <range start1="18" end1="20" start2="20" end2="24" changelist="3026ca49-6c27-4ae9-87a7-d16d187a7b40" />
+        <range start1="25" end1="26" start2="29" end2="88" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+        <range start1="36" end1="36" start2="98" end2="102" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+        <range start1="58" end1="59" start2="124" end2="126" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+        <range start1="60" end1="60" start2="127" end2="128" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+        <range start1="61" end1="61" start2="129" end2="130" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+        <range start1="81" end1="81" start2="150" end2="154" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+        <range start1="83" end1="84" start2="156" end2="162" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp">
+      <ranges>
+        <range start1="38" end1="39" start2="38" end2="39" changelist="3026ca49-6c27-4ae9-87a7-d16d187a7b40" />
+        <range start1="44" end1="45" start2="44" end2="45" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+        <range start1="64" end1="64" start2="64" end2="65" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+        <range start1="65" end1="66" start2="66" end2="66" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java">
+      <ranges>
+        <range start1="7" end1="7" start2="7" end2="8" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+        <range start1="9" end1="10" start2="10" end2="14" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+        <range start1="11" end1="12" start2="15" end2="16" changelist="3026ca49-6c27-4ae9-87a7-d16d187a7b40" />
+        <range start1="22" end1="25" start2="26" end2="28" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+        <range start1="28" end1="29" start2="31" end2="32" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+        <range start1="38" end1="39" start2="41" end2="57" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+        <range start1="40" end1="44" start2="58" end2="79" changelist="564cb333-20b3-43d1-aa7e-83aba660426d" />
+      </ranges>
+    </file>
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -64,50 +124,147 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/studentdev05/IdeaProjects/Labo/src/main/webapp/images/index",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/studentdev05/IdeaProjects/Labo/src/main/webapp/images/index&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\studentdev05\IdeaProjects\Labo\src\main\webapp\images\index" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\studentdev05\IdeaProjects\Labo\src\main\webapp\images" />
       <recent name="C:\Users\studentdev05\IdeaProjects\Labo\src\main\webapp\WEB-INF\pages\user" />
       <recent name="C:\Users\studentdev05\IdeaProjects\Labo\src\main\webapp\images\index" />
       <recent name="C:\Users\studentdev05\IdeaProjects\Labo\src\main\webapp" />
       <recent name="C:\Users\studentdev05\IdeaProjects\Labo\src\main\resources\images\logo" />
-      <recent name="C:\Users\studentdev05\IdeaProjects\Labo\src\main\resources\images\index" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.labo.servlets" />
       <recent name="com.example.labo.models.forms" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TomEE Server.TomEE 10.0.27">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.labo.Main" />
+      <module name="DemoWebAppLabo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.labo.servlets.Test" />
+      <module name="DemoWebAppLabo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.labo.servlets.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GlassFish 7.0.4" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 7.0.4" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Labo" />
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <deployment>
+        <artifact name="DemoWebAppLabo:war exploded">
+          <settings>
+            <option name="contextRoot" value="/Labo" />
+            <option name="defaultContextRoot" value="false" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="DOMAIN" value="domain1" />
+        <option name="PRESERVE" value="false" />
+        <option name="COMPATIBILITY" value="false" />
+        <option name="VIRTUAL_SERVER" />
+        <option name="USERNAME" value="admin" />
+        <option name="CREDENTIAL_ALIAS" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="GlassFish" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="9009" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Labo:war exploded" />
+          <artifact name="DemoWebAppLabo:war exploded" />
+        </option>
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Labo" />
       <method v="2">
@@ -133,7 +290,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="3ba6dab1-9755-4a1e-85f7-8caa08a6de4a" />
+        <option name="BASE_DIRECTORY_NAME" value="38337418-bc6b-4c94-9a5c-e21b4a808d55" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -141,7 +298,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="56295" />
+        <option name="DEBUG_PORT" value="50153" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -210,18 +367,17 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="GlassFish Server.GlassFish 7.0.4" />
+      <item itemvalue="TomEE Server.TomEE 10.0.27" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -238,7 +394,7 @@
       <workItem from="1685428310618" duration="24017000" />
       <workItem from="1685084078319" duration="17799000" />
       <workItem from="1685515493668" duration="24324000" />
-      <workItem from="1685653105002" duration="3429000" />
+      <workItem from="1685690098315" duration="17532000" />
     </task>
     <task id="LOCAL-00001" summary="1st version">
       <created>1684936254006</created>
@@ -297,15 +453,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="1ere version inchallah" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/header.jsp</url>
-          <line>30</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="GlassfishConfiguration">
         <watch expression="response" />

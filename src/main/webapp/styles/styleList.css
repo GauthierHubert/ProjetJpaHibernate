@@ -22,7 +22,7 @@ section {
     max-width: 1000px;
     background-color: rgba(42, 39, 39, 0.7);
     border-radius: 10px;
-    table-layout: fixed; /* Utilisation d'une mise en page fixe */
+    /*table-layout: fixed; !* Utilisation d'une mise en page fixe *!*/
 }
 
 th {

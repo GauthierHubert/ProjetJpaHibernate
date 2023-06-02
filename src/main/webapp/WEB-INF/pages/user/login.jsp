@@ -39,7 +39,7 @@
     <h1>Se connecter</h1>
     <form class="login-form" method="post" action="login">
 
-      <c:if test="${loginError != null}"> <span style="color : red">${loginError}</span> </c:if>
+      <c:if test="${loginError != null}"> <span class="error">${loginError}</span> </c:if>
       <div class="form-group">
 
         <input type="text" id="login" name="login" placeholder="Login" value="${login}">
@@ -49,10 +49,8 @@
         <input type="password" id="password" name="password" placeholder="Mot de passe">
       </div>
 
-
-
       <button type="submit" class="">Connect</button>
-      <span style="color: red">${errorMsg}</span>
+
     </form>
   </div>
 </main>

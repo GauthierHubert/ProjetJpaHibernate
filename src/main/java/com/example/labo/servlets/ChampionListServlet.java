@@ -32,7 +32,7 @@ public class ChampionListServlet extends HttpServlet {
         System.out.println("champions.size() = " + champions.size());
         request.setAttribute("champion", champions);
 
-        request.getRequestDispatcher("./WEB-INF/pages/champion/championList.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/pages/champion/championList.jsp").forward(request,response);
 
     }
     @Override

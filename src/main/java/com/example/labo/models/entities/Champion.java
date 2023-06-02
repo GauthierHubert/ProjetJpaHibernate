@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Base64;
 
-@NoArgsConstructor @AllArgsConstructor @Getter @Setter
+@Getter @Setter
 @Table(name = "CHAMPION")
 @Entity
 public class Champion implements Serializable {

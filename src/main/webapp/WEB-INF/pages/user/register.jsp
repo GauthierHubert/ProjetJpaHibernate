@@ -36,7 +36,7 @@
     <div class="login-container">
         <h1>Register</h1>
         <form class="login-form" method="post" action="register">
-            <c:if test="${registerError != null}"> <span style="color : red">${registerError}</span> </c:if>
+            <c:if test="${registerError != null}"> <span class="error">${registerError}</span> </c:if>
             <div class="form-group">
                 <c:if test="${usernameError != null}"> <span style="color: red"> Invalid username </span>  </c:if>
                 <input type="text" id="username" name="username" placeholder="Username" value="${username}">
