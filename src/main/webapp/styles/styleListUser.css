@@ -1,0 +1,26 @@
+
+
+
+.pagination{
+    width: fit-content;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    text-decoration-line: none;
+    margin: 0 10px;
+}
+
+
+.splash-art{
+    margin-left: 20%;
+    width: 55%;
+    height: auto;
+}
+
+.champion-name{
+   display: flex;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}

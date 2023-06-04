@@ -45,8 +45,8 @@ public class Champion implements Serializable {
     @OneToMany(mappedBy = "champion",cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private Set<Splash> splash ;
 
-    private File url1 = new File("C:/Users/studentdev05/IdeaProjects/Labo/src/main/webapp/images/1");
-    private File url2 = new File("C:/Users/studentdev05/IdeaProjects/Labo/src/main/webapp/images/2");
+    private File url1 = new File("C:\\Users\\Administrator\\IdeaProjects\\LaboLoL\\src\\main\\webapp\\images\\1");
+    private File url2 = new File("C:\\Users\\Administrator\\IdeaProjects\\LaboLoL\\src\\main\\webapp\\images\\2");
 
     public Champion() {
         this.loading = new HashSet<>();

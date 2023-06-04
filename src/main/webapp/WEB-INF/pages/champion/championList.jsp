@@ -122,12 +122,12 @@
       %>
       <tr>
         <td><%= champion.getId()%>         </td>
-        <td><%= champion.getIcon()%></td>
+        <td><img src="<%= champion.getIcon()%>"></td>
 
         <td><%= champion.getName()%>   </td>
-<%--
-        <td><%= champion.getAClassType()%>      </td>
---%>
+
+        <td><%= champion.getClassType()%>      </td>
+
         <td><%= champion.getCreationDate()%>       </td>
 
         <td>

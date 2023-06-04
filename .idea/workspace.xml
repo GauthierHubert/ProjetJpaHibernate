@@ -9,16 +9,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3026ca49-6c27-4ae9-87a7-d16d187a7b40" name="Changes" comment="Base de donné champion okok" />
-    <list id="564cb333-20b3-43d1-aa7e-83aba660426d" name="Changes by studentdev08" comment="Changes by studentdev08">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/addListChampion.jsp" afterDir="false" />
+    <list default="true" id="3026ca49-6c27-4ae9-87a7-d16d187a7b40" name="Changes" comment="Base de donné champion okok">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/ChampionListUserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championListUser.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/styles/styleListUser.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/information_schema.FNRwLQ.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02-06-23_08_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02-06-23_08_46__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-05-23_16_12__Changes_by_studentdev08_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-05-23_16_12__Changes_by_studentdev08_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/models/forms/ChampionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/forms/ChampionForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddChampionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddChampionServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddListChampionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddListChampionServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/header.jsp" afterDir="false" />
     </list>
+    <list id="564cb333-20b3-43d1-aa7e-83aba660426d" name="Changes by studentdev08" comment="Changes by studentdev08" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,10 +47,10 @@
         <option value="Interface" />
         <option value="jsf" />
         <option value="CSS File" />
-        <option value="CSS File" />
+        <option value="Jsp File" />
         <option value="Jsp File" />
         <option value="Class" />
-        <option value="Jsp File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -67,6 +83,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/studentdev05/IdeaProjects/Labo/src/main/webapp/images/index&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -74,8 +91,8 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -213,7 +230,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TomEE 10.0.27" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 10.0.27" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="TomEE 10.0.27" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 10.0.27" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="19" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Labo" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
@@ -330,6 +347,9 @@
       <workItem from="1685084078319" duration="17799000" />
       <workItem from="1685515493668" duration="24324000" />
       <workItem from="1685690098315" duration="18088000" />
+      <workItem from="1685802794444" duration="1543000" />
+      <workItem from="1685804347410" duration="6019000" />
+      <workItem from="1685860687193" duration="10035000" />
     </task>
     <task id="LOCAL-00001" summary="1st version">
       <created>1684936254006</created>

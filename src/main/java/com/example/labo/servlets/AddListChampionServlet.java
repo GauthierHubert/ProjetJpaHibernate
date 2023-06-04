@@ -29,7 +29,7 @@ public class AddListChampionServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        File dossier = new File("C:/Users/studentdev05/IdeaProjects/Labo/src/main/webapp/images/1");
+        File dossier = new File("C:\\Users\\Administrator\\IdeaProjects\\LaboLoL\\src\\main\\webapp\\images\\1");
 
         if(dossier.isDirectory()) {
             File[] fichiers = dossier.listFiles();

@@ -46,6 +46,7 @@ public class LoginServlet extends HttpServlet {
             User user = userService.login(login, password);
             HttpSession session = request.getSession(true);
             session.setAttribute("user", ConnectedUserDto.fromEntity(user));
+            session.setAttribute("role", user.getRole());
 
 
         } catch (RuntimeException e) {
