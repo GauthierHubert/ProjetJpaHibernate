@@ -27,6 +27,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styleListUser.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@900&display=swap" rel="stylesheet">
+
     <title>Champion List</title>
   </head>
 </head>
@@ -79,6 +83,10 @@
           <% } %>
               <td class="td-splash">
                 <img src="<%= splashUrl %>" class="splash-art">
+                <form action="championPage" method="get">
+                  <button type="submit" class="form-splash" name="champ-page" id="champ-page"></button>
+                  <input type="text" name="id" value="<%= champion.getName() %>" hidden="hidden">
+                </form>
                 <p class="champion-name"><%= champion.getName() %></p>
               </td>
 
@@ -92,11 +100,13 @@
 
   <!-- Afficher les liens de pagination -->
   <div class="pagination">
-    <% if (currentPage > 1) { %>
+    <% int i = currentPage-1; if (currentPage > 1) { %>
     <a href="?page=<%= currentPage - 1 %>" class="next-button">&laquo; Précédent</a>
-    <% } int i = currentPage-1;%>
+    <% } else { %>
+    <p class="next-button">&laquo; Précédent</p>
+    <% } %>
     <% if (currentPage > 2) { %>
-    <a href="?page=1"> 1 ...</a>
+    <a href="?page=1"> 1  ...</a>
     <% } %>
     <%if(currentPage < 2){
        i = 1;
@@ -109,10 +119,12 @@
     <% } %>
     <% } %>
     <% if (currentPage < totalPages-1) { %>
-    <a href="?page=<%= totalPages%>">... <%=totalPages%> </a>
+    <a href="?page=<%= totalPages%>">...  <%=totalPages%> </a>
     <% } %>
     <% if (currentPage < totalPages) { %>
     <a href="?page=<%= currentPage + 1 %>" class="next-button">Suivant &raquo;</a>
+    <% } else { %>
+    <p class="next-button">Suivant &raquo;</p>
     <% } %>
   </div>
 </main>

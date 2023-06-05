@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.IOException;
 import java.util.Set;
@@ -33,7 +34,7 @@ public class AddUserServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String username = request.getParameter("username");
-        String password = request.getParameter("password");
+        String password = BCrypt.hashpw(request.getParameter("password"), BCrypt.gensalt());
         String email = request.getParameter("email");
         String role = request.getParameter("role");
 

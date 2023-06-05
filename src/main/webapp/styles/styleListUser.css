@@ -1,14 +1,41 @@
 
+.td-splash {
+    position: relative;
+}
+
 
 
 .pagination{
     width: fit-content;
     margin: 0 auto;
 }
-a{
-    text-decoration: none;
+
+
+.pagination > a {
+    text-decoration: none !important;
     text-decoration-line: none;
-    margin: 0 10px;
+    padding: 0 10px;
+    color: black !important;
+    border: black 1px solid !important;
+    border-left: 0px !important;
+}
+.pagination > a:first-child{
+    border: black 1px solid !important;
+}
+
+.pagination > .active {
+    color: #842121 !important;
+}
+
+.pagination > a:hover{
+    color: #423f3f !important;
+}
+
+.pagination > p {
+    margin: 0;
+    padding: 0 0;
+    border: black 1px solid !important;
+    color: #423f3f !important;
 }
 
 
@@ -16,11 +43,29 @@ a{
     margin-left: 20%;
     width: 55%;
     height: auto;
+    margin-bottom: -2.5vw;
+    z-index: -1 !important;
+}
+form{
+    width: 100%;
+}
+
+.form-splash {
+    position: absolute;
+    top: 2%;
+    margin-left: 19%;
+    width: 52%;
+    height: 97%;
+    opacity: 0%;
+    z-index: 2;
 }
 
 .champion-name{
-   display: flex;
-    margin: 0 auto;
-    width: 100%;
+    margin: 0 20%;
+    width: 55%;
     text-align: center;
+
+    text-shadow: 2px 2px 5px black,-2px -2px 5px black ;
+    color: white;
+    font-family: 'Geologica', sans-serif;
 }
