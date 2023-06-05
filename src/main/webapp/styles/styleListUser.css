@@ -40,6 +40,8 @@
 
 
 .splash-art{
+    position: static;
+    margin-top: 5%;
     margin-left: 20%;
     width: 55%;
     height: auto;
@@ -50,18 +52,8 @@ form{
     width: 100%;
 }
 
-.form-splash {
-    position: absolute;
-    top: 2%;
-    margin-left: 19%;
-    width: 52%;
-    height: 97%;
-    opacity: 0%;
-    z-index: 2;
-}
-
 .champion-name{
-    margin: 0 20%;
+    margin: 0 20% 10%;
     width: 55%;
     text-align: center;
 
@@ -69,3 +61,33 @@ form{
     color: white;
     font-family: 'Geologica', sans-serif;
 }
+
+.form-splash {
+    position: absolute;
+    top: 6%;
+    margin-left: 19%;
+    width: 52%;
+    height: 85%;
+    opacity: 0%;
+    z-index: 2;
+    filter: blur(0px);
+
+    background-color: black;
+    transition: opacity 1s, filter 1s;
+
+}
+.p-button{
+    position: static;
+    opacity: 100%;
+    z-index: 10;
+}
+
+.form-splash:hover{
+    opacity: 50%;
+    filter: blur(4px);
+}
+
+
+
+
+

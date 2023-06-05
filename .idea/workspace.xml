@@ -9,28 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3026ca49-6c27-4ae9-87a7-d16d187a7b40" name="Changes" comment="Base de donné champion okok">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043/storage_v2/_src_/database/Labo.ogQkAA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02-06-23_08_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02-06-23_08_46__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-05-23_16_12__Changes_by_studentdev08_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-05-23_16_12__Changes_by_studentdev08_.xml" afterDir="false" />
+    <list default="true" id="3026ca49-6c27-4ae9-87a7-d16d187a7b40" name="Changes" comment="Fin Css champioUserList">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddListChampionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddListChampionServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/AddUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championListUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championListUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/1/ChoGath.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/1/Chogath.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/1/Gwenn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/1/Gwen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/1/Kai'Sa.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/1/Kaisa.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/1/Kha'Zix.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/1/Khazix.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/1/Kog'Maw.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/1/KogMaw.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/1/LeBlanc.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/1/Leblanc.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/styleListUser.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/styleListUser.css" afterDir="false" />
     </list>
     <list id="564cb333-20b3-43d1-aa7e-83aba660426d" name="Changes by studentdev08" comment="Changes by studentdev08" />
@@ -350,7 +331,7 @@
       <workItem from="1685802794444" duration="1543000" />
       <workItem from="1685804347410" duration="6019000" />
       <workItem from="1685860687193" duration="10035000" />
-      <workItem from="1685957113572" duration="8594000" />
+      <workItem from="1685957113572" duration="11118000" />
     </task>
     <task id="LOCAL-00001" summary="1st version">
       <created>1684936254006</created>
@@ -380,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685715876435</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fin Css champioUserList">
+      <created>1685971580616</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685971580616</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +403,8 @@
     <MESSAGE value="1ere version inchallah" />
     <MESSAGE value="Base de donné champion ok" />
     <MESSAGE value="Changes by studentdev08" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by studentdev08" />
+    <MESSAGE value="Fin Css champioUserList" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fin Css champioUserList" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

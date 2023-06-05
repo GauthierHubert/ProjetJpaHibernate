@@ -82,12 +82,14 @@
           <tr>
           <% } %>
               <td class="td-splash">
+                <div class="hover-blur">
                 <img src="<%= splashUrl %>" class="splash-art">
                 <form action="championPage" method="get">
-                  <button type="submit" class="form-splash" name="champ-page" id="champ-page"></button>
+                  <button type="submit" class="form-splash" name="champ-page" id="champ-page"><p class="p-button">Voir plus</p></button>
                   <input type="text" name="id" value="<%= champion.getName() %>" hidden="hidden">
                 </form>
                 <p class="champion-name"><%= champion.getName() %></p>
+                </div>
               </td>
 
           <%if(cpt == 5){%>
