@@ -9,10 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3026ca49-6c27-4ae9-87a7-d16d187a7b40" name="Changes" comment="Fin Css champioUserList">
+    <list default="true" id="3026ca49-6c27-4ae9-87a7-d16d187a7b40" name="Changes" comment="Continuation du css championListUser">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/UpdateChampionServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/updateChampion.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c97867a-5822-462d-960a-41d4e846c043.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championListUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championListUser.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/styleListUser.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/styleListUser.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/models/entities/Champion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/UpdateUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/labo/servlets/UpdateUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/champion/championList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/updateRole.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/updateUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/updateUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/userList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles/styleList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles/styleList.css" afterDir="false" />
     </list>
     <list id="564cb333-20b3-43d1-aa7e-83aba660426d" name="Changes by studentdev08" comment="Changes by studentdev08" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,9 +36,9 @@
         <option value="jsf" />
         <option value="CSS File" />
         <option value="Jsp File" />
-        <option value="Jsp File" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -43,7 +51,7 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
@@ -331,7 +339,8 @@
       <workItem from="1685802794444" duration="1543000" />
       <workItem from="1685804347410" duration="6019000" />
       <workItem from="1685860687193" duration="10035000" />
-      <workItem from="1685957113572" duration="11118000" />
+      <workItem from="1685957113572" duration="11383000" />
+      <workItem from="1686033668878" duration="11686000" />
     </task>
     <task id="LOCAL-00001" summary="1st version">
       <created>1684936254006</created>
@@ -368,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685971580616</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Continuation du css championListUser">
+      <created>1685975519531</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685975519531</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +420,8 @@
     <MESSAGE value="Base de donné champion ok" />
     <MESSAGE value="Changes by studentdev08" />
     <MESSAGE value="Fin Css champioUserList" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fin Css champioUserList" />
+    <MESSAGE value="Continuation du css championListUser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Continuation du css championListUser" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

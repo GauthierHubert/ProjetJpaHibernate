@@ -87,6 +87,63 @@
   </div>
 </div>
 
+<div class="modal fade" id="2exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="2exampleModalLabel">Update the Champion</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="updateChampion" method="post" style="width:95%; min-width: 300px;">
+          <div class="form-group">
+            <label class="form-label">Name :</label>
+            <input type="text" class="form-control" name="2name" placeholder="Nom"
+                   id="2username">
+          </div>
+          <div class="form-group">
+            <label for="2selectClass">Class :</label>
+            <select class="form-select" name="2class" id="2selectClass">
+              <option value="CONTROLLER">CONTROLLER</option>
+              <option value="FIGHTER">FIGHTER</option>
+              <option value="MAGE">MAGE</option>
+              <option value="MARKSMAN">MARKSMAN</option>
+              <option value="SLAYER">SLAYER</option>
+              <option value="TANK">TANK</option>
+              <option value="SPECIALIST">SPECIALIST</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="2selectRegion"> Region :</label>
+            <select class="form-select" name="2region" id="2selectRegion">
+              <option value="BANDE_CITY">BANDLE_CITY</option>
+              <option value="DEMACIA">DEMACIA</option>
+              <option value="FRELJORD">FRELJORD</option>
+              <option value="IONIA">IONIA</option>
+              <option value="IXTAL">IXTAL</option>
+              <option value="MOUNT_TARGON">MOUNT_TARGON</option>
+              <option value="NOXUS">NOXUS</option>
+              <option value="PILTOVER">PILTOVER</option>
+              <option value="BILGEWATER">BILGEWATER</option>
+              <option value="SHADOW_ISLES">SHADOW_ISLES</option>
+              <option value="SHURIMA">SHURIMA</option>
+              <option value="VOID">VOID</option>
+              <option value="ZAUN">ZAUN</option>
+            </select>
+          </div>
+          <input type="hidden" name="id" id="championId" value="">
+          <div>
+            <button type="submit" class="btn btn-success" name="submit">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="background"></div>
 
 <%@ include file="../user/header.jsp" %>
@@ -128,14 +185,12 @@
 
         <td><%= champion.getClassType()%>      </td>
 
-        <td><%= champion.getCreationDate()%>       </td>
-
         <td>
-          <form action="updateChampion" method="get">
-            <button type="submit" class="btn btn-custom-update" name="upd" id="button-update">Update</button>
-            <input type="text" name="id" value="<%= champion.getId() %>" hidden="hidden">
-          </form>
-        </td>
+            <button type="button" class="btn btn-custom-update" data-toggle="modal"
+                    data-target="#2exampleModal" data-id="<%= champion.getId() %>">
+              Update
+            </button>
+          </td>
         <td>
           <form action="championList" method="post">
             <button type="submit" class="btn btn-custom-delete test-red" name="del" id="button-delete">Delete</button>
@@ -148,10 +203,6 @@
     </table>
   </section>
 </main>
-<form action="addListChampion" method="post">
-<button type="submit" class="btn btn-custom-delete test-red">ADD ALL CHAMPION</button>
-</form>
-
 
 <%--  BOOTSTRAP  --%>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -160,5 +211,14 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $(".btn-custom-update").click(function() {
+      var championId = $(this).data("id");
+      $("#championId").val(championId);
+    });
+  });
+</script>
+
 </body>
 </html>

@@ -39,10 +39,10 @@ public class Champion implements Serializable {
     @Temporal(TemporalType.DATE)
     private LocalDate creationDate;
 
-    @OneToMany(mappedBy = "champion",cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "champion",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Loading> loading ;
 
-    @OneToMany(mappedBy = "champion",cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "champion",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Splash> splash ;
 
     private File url1 = new File("C:/Users/studentdev08/IdeaProjects/ProjetJpaHibernate/src/main/webapp/images/1");

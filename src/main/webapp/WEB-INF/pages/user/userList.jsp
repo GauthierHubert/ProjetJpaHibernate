@@ -28,7 +28,6 @@
 
 <%@ include file="header.jsp" %>
 
-
     <main id="main-content">
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -74,6 +73,49 @@
             </div>
         </div>
 
+        <div class="modal fade" id="2exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="2exampleModalLabel">Add a user</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="updateUser" method="post">
+                            <div class="form-group">
+                                <label class="form-label" for="2username">Username :</label>
+                                <input type="text" class="form-control" id="2username" name="username"
+                                       placeholder="Pseudo"
+                                       value="">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="2password">Password :</label>
+                                <input type="password" class="form-control" id="2password" name="password"
+                                       placeholder="*****">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="2userEmail">Email :</label>
+                                <input type="email" class="form-control" id="2userEmail" name="email"
+                                       placeholder="exemple@exemple.com">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-select" name="role" id="2selectRole">
+                                    <option value="${userRole}"></option>
+                                    <option value="ADMIN">ADMIN</option>
+                                    <option value="PLAYER">PLAYER</option>
+                                </select>
+                            </div>
+                            <input type="hidden" name="id" id="userId" value="">
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <% List<User> users = (List<User>) request.getAttribute("user");%>
 
         <section class="form-div">
@@ -108,11 +150,10 @@
                     <td><%= user.getRole()%>
                     </td>
                     <td>
-                        <form action="updateUser" method="get">
-                            <button type="submit" class="btn btn-custom-update" name="upd" id="button-update">Update
-                            </button>
-                            <input type="text" name="id" value="<%= user.getId() %>" hidden="hidden">
-                        </form>
+                        <button type="button" class="btn btn-custom-update" data-toggle="modal"
+                                data-target="#2exampleModal" data-id="<%= user.getId() %>" data-role="<%= user.getRole()%>" data-name="<%=user.getUsername()%>" data-mail="<%= user.getEmail()%>">
+                            Update
+                        </button>
                     </td>
                     <td>
                         <form action="userList" method="post">
@@ -139,5 +180,19 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".btn-custom-update").click(function() {
+            var userId = $(this).data("id");
+            $("#userId").val(userId);
+            var userRole = $(this).data("role");
+            $("#2selectRole").val(userRole);
+            var username= $(this).data("name");
+            $("#2username").val(username);
+            var userEmail = $(this).data("mail");
+            $("#2userEmail").val(userEmail);
+        });
+    });
+</script>
 </body>
 </html>

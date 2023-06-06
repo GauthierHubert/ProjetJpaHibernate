@@ -110,3 +110,13 @@ button[type="submit"]:hover {
 
 
 }
+
+.btn-custom-update{
+    padding: 10px 20px !important;
+    background-color: rgba(176, 115, 22, 0.8) !important; /* Couleur verte avec une opacité de 0.8 */
+    font-weight: bold !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+}

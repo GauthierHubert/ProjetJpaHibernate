@@ -25,29 +25,7 @@ public class UpdateUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        // Obtention de la session
-        HttpSession session = request.getSession(true);
 
-        // Récupération de l'ID de l'utilisateur à partir des paramètres de la requête
-        Long id = Long.parseLong(request.getParameter("id"));
-        System.out.println("id = " + id);
-
-        // Obtention des informations de l'utilisateur à partir du service
-        User user = userService.getAllInfoById(id);
-        String username = user.getUsername();
-        String password = user.getPassword();
-        String email = user.getEmail();
-        String role = user.getRole();
-
-        // Stockage des informations de l'utilisateur dans la session
-        session.setAttribute("USER_ID", user.getId());
-        session.setAttribute("role", role);
-        session.setAttribute("username", username);
-        session.setAttribute("password", password);
-        session.setAttribute("email", email);
-
-        // Redirection vers la page de mise à jour d'utilisateur
-        request.getRequestDispatcher("WEB-INF/pages/user/updateUser.jsp").forward(request,response);
     }
 
     @Override
@@ -55,15 +33,11 @@ public class UpdateUserServlet extends HttpServlet {
 
         HttpSession session = request.getSession(true);
         // Récupération des paramètres de la requête
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        String role = request.getParameter("role");
-
-        // Récupération de l'ID de l'utilisateur depuis la session
-
-        Long id = (Long) session.getAttribute("USER_ID");
-        System.out.println("id DE POST = " + id);
+        String username = request.getParameter("2username");
+        String password = request.getParameter("2password");
+        String email = request.getParameter("2email");
+        String role = request.getParameter("2role");
+        Long id = Long.parseLong(request.getParameter("id"));
 
         // Récupération du mot de passe original de l'utilisateur
         String originalPassword = userService.getAllInfoById(id).getPassword();
